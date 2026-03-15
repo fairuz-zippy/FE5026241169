@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bootstrap Popover — Panduan Interaktif</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css"/>
+
+</head>
+<body>
+
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+
+<div class="wrapper">
+
+  <!-- ══ HEADER ══ -->
+  <header class="site-header">
+    <div class="badge-tag"><i class="bi bi-lightning-charge-fill"></i> Bootstrap 5 · Popover</div>
+    <h1 class="hero-title">Panduan Interaktif<br><span>Bootstrap Popover</span></h1>
+    <p class="hero-sub">Kompilasi contoh nyata penggunaan popover dalam antarmuka aplikasi modern — dari form, toko online, hingga dashboard.</p>
+  </header>
+
+  <!-- ══════════════════════════════════════
+       SECTION 1 — Dasar: 4 Arah Popover
+  ══════════════════════════════════════════ -->
+  <section class="section">
+    <div class="section-label">Contoh 1</div>
+    <h2 class="section-title">Arah Kemunculan Popover</h2>
+    <p class="section-desc">Tombol aksi di halaman pemesanan tiket — setiap tombol menampilkan keterangan singkat sesuai posisinya.</p>
+
+    <div class="demo-card">
+      <p class="mb-3" style="color:var(--muted);font-size:13px;">Arahkan / klik tombol di bawah:</p>
+      <div class="d-flex flex-wrap gap-3 align-items-center justify-content-center" style="min-height:120px;">
+        <button class="btn btn-demo btn-cyan"
+          data-bs-toggle="popover"
+          data-bs-placement="top"
+          data-bs-title="Pesan Tiket"
+          data-bs-content="Klik untuk memilih kursi dan tanggal keberangkatan Anda.">
+          <i class="bi bi-arrow-up-circle me-1"></i> Atas
+        </button>
+        <button class="btn btn-demo btn-pink"
+          data-bs-toggle="popover"
+          data-bs-placement="right"
+          data-bs-title="Bagasi Tambahan"
+          data-bs-content="Tambah bagasi hingga 30 kg dengan tarif Rp75.000 per kg.">
+          <i class="bi bi-arrow-right-circle me-1"></i> Kanan
+        </button>
+        <button class="btn btn-demo btn-gold"
+          data-bs-toggle="popover"
+          data-bs-placement="bottom"
+          data-bs-title="Asuransi Perjalanan"
+          data-bs-content="Lindungi perjalanan Anda dengan asuransi mulai Rp25.000.">
+          <i class="bi bi-arrow-down-circle me-1"></i> Bawah
+        </button>
+        <button class="btn btn-demo btn-ghost"
+          data-bs-toggle="popover"
+          data-bs-placement="left"
+          data-bs-title="Check-in Online"
+          data-bs-content="Buka 24 jam sebelum keberangkatan melalui aplikasi atau web.">
+          <i class="bi bi-arrow-left-circle me-1"></i> Kiri
+        </button>
+      </div>
+
+      <div class="code-block">
+&lt;<span class="tg">button</span>
+  <span class="at">data-bs-toggle</span>=<span class="vl">"popover"</span>
+  <span class="at">data-bs-placement</span>=<span class="vl">"top"</span>
+  <span class="at">data-bs-title</span>=<span class="vl">"Pesan Tiket"</span>
+  <span class="at">data-bs-content</span>=<span class="vl">"Klik untuk memilih kursi..."</span>&gt;
+  Pesan
+&lt;/<span class="tg">button</span>&gt;
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider"/>
+
+  <!-- ══════════════════════════════════════
+       SECTION 2 — Trigger: click & hover
+  ══════════════════════════════════════════ -->
+  <section class="section">
+    <div class="section-label">Contoh 2</div>
+    <h2 class="section-title">Mode Trigger: Click & Hover</h2>
+    <p class="section-desc">Di halaman produk e-commerce — hover untuk pratinjau cepat, klik untuk informasi detail.</p>
+
+    <div class="demo-card">
+      <div class="d-flex flex-wrap gap-3 align-items-center">
+        <!-- Hover trigger -->
+        <span
+          data-bs-toggle="popover"
+          data-bs-trigger="hover"
+          data-bs-placement="top"
+          data-bs-title="👟 Nike Air Max 270"
+          data-bs-content="Tersedia ukuran 39–44. Stok tersisa: 5 pasang. Rating: ⭐ 4.8/5"
+          style="cursor:pointer; display:inline-block; text-decoration:none;">
+          <div class="product-item" style="width:150px;">
+            <span class="product-img">👟</span>
+            <div class="product-name">Air Max 270</div>
+            <div class="product-price">Rp 1.850.000</div>
+          </div>
+        </span>
+
+        <!-- Click trigger -->
+        <span
+          data-bs-toggle="popover"
+          data-bs-trigger="click"
+          data-bs-placement="top"
+          data-bs-title="🎧 Sony WH-1000XM5"
+          data-bs-content="Noise-cancelling aktif. Baterai 30 jam. Gratis ongkir ke seluruh Indonesia.">
+          <div class="product-item" style="width:150px; cursor:pointer;">
+            <span class="product-img">🎧</span>
+            <div class="product-name">Sony XM5</div>
+            <div class="product-price">Rp 4.299.000</div>
+          </div>
+        </span>
+
+        <!-- Focus trigger -->
+        <div>
+          <p style="font-size:12px;color:var(--muted);margin-bottom:8px;"><i class="bi bi-info-circle me-1"></i>Klik kotak pencarian:</p>
+          <input type="text" placeholder="Cari produk…"
+            data-bs-toggle="popover"
+            data-bs-trigger="focus"
+            data-bs-placement="bottom"
+            data-bs-title="💡 Tips Pencarian"
+            data-bs-content='Coba: "sepatu pria", "headphone", atau gunakan filter kategori di sebelah kiri.'
+            class="search-input"
+          />
+        </div>
+      </div>
+
+      <div class="code-block">
+<span class="kw">/* Hover */</span>  <span class="at">data-bs-trigger</span>=<span class="vl">"hover"</span>
+<span class="kw">/* Click */</span>  <span class="at">data-bs-trigger</span>=<span class="vl">"click"</span>
+<span class="kw">/* Focus */</span>  <span class="at">data-bs-trigger</span>=<span class="vl">"focus"</span>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider"/>
+
+  <!-- ══════════════════════════════════════
+       SECTION 3 — Form Input Helper
+  ══════════════════════════════════════════ -->
+  <section class="section">
+    <div class="section-label">Contoh 3</div>
+    <h2 class="section-title">Panduan Isian Form Registrasi</h2>
+    <p class="section-desc">Popover membantu pengguna memahami format & syarat input tanpa memenuhi layar dengan teks.</p>
+
+    <div class="demo-card">
+      <div style="max-width:420px;">
+        <!-- Username -->
+        <div class="form-field">
+          <label>Username</label>
+          <div class="input-wrap">
+            <input type="text" placeholder="cth: budi_santoso92" id="inp-user"/>
+            <i class="bi bi-question-circle info-icon"
+              tabindex="0"
+              data-bs-toggle="popover"
+              data-bs-trigger="hover focus"
+              data-bs-placement="right"
+              data-bs-title="Format Username"
+              data-bs-content="4–20 karakter. Gunakan huruf kecil, angka, dan underscore (_). Tidak boleh mengandung spasi.">
+            </i>
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="form-field">
+          <label>Kata Sandi</label>
+          <div class="input-wrap">
+            <input type="password" placeholder="Min. 8 karakter" id="inp-pass"/>
+            <i class="bi bi-shield-lock info-icon"
+              tabindex="0"
+              data-bs-toggle="popover"
+              data-bs-trigger="hover focus"
+              data-bs-placement="right"
+              data-bs-title="Persyaratan Kata Sandi"
+              data-bs-content="Minimal 8 karakter. Wajib mengandung huruf besar, huruf kecil, angka, dan simbol (!@#$).">
+            </i>
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="form-field">
+          <label>Nomor Telepon</label>
+          <div class="input-wrap">
+            <input type="text" placeholder="cth: 08123456789" id="inp-phone"/>
+            <i class="bi bi-telephone info-icon"
+              tabindex="0"
+              data-bs-toggle="popover"
+              data-bs-trigger="hover focus"
+              data-bs-placement="right"
+              data-bs-title="Format Nomor"
+              data-bs-content="Nomor aktif Indonesia diawali 08 atau +62. OTP verifikasi akan dikirim ke nomor ini.">
+            </i>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+&lt;<span class="tg">i</span>
+  <span class="at">data-bs-toggle</span>=<span class="vl">"popover"</span>
+  <span class="at">data-bs-trigger</span>=<span class="vl">"hover focus"</span>
+  <span class="at">data-bs-title</span>=<span class="vl">"Format Username"</span>
+  <span class="at">data-bs-content</span>=<span class="vl">"4–20 karakter..."</span>&gt;
+&lt;/<span class="tg">i</span>&gt;
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider"/>
+
+  <!-- ══════════════════════════════════════
+       SECTION 4 — Popover via JavaScript
+  ══════════════════════════════════════════ -->
+  <section class="section">
+    <div class="section-label">Contoh 4</div>
+    <h2 class="section-title">Kontrol Popover via JavaScript</h2>
+    <p class="section-desc">Dashboard admin — toggle notifikasi status server secara manual lewat kode.</p>
+
+    <div class="demo-card">
+      <div class="d-flex flex-wrap gap-3 align-items-center mb-4">
+        <span class="dot dot-green"></span>
+        <span style="font-size:13px;color:var(--text);" id="server-status-label">Server: <strong>Online</strong></span>
+        <button id="serverPopoverTarget"
+          class="btn btn-demo btn-cyan ms-2"
+          style="pointer-events:none; opacity:.85;">
+          <i class="bi bi-hdd-network me-1"></i> api.myapp.id
+        </button>
+      </div>
+
+      <div class="d-flex flex-wrap gap-2">
+        <button class="btn btn-demo btn-cyan" onclick="serverPop.show()">
+          <i class="bi bi-play-fill me-1"></i> Tampilkan
+        </button>
+        <button class="btn btn-demo btn-ghost" onclick="serverPop.hide()">
+          <i class="bi bi-eye-slash me-1"></i> Sembunyikan
+        </button>
+        <button class="btn btn-demo btn-pink" onclick="serverPop.toggle()">
+          <i class="bi bi-toggles me-1"></i> Toggle
+        </button>
+        <button class="btn btn-demo btn-gold" onclick="serverPop.dispose(); document.getElementById('disposeNote').style.display='block'">
+          <i class="bi bi-trash3 me-1"></i> Dispose
+        </button>
+      </div>
+      <p id="disposeNote" style="display:none;margin-top:12px;font-size:12px;color:var(--accent3);">
+        <i class="bi bi-info-circle me-1"></i> Popover telah dihapus dari elemen. Refresh halaman untuk mengembalikan.
+      </p>
+
+      <div class="code-block">
+<span class="kw">const</span> el = document.<span class="at">getElementById</span>(<span class="vl">'serverPopoverTarget'</span>);
+<span class="kw">const</span> serverPop = <span class="kw">new</span> bootstrap.<span class="at">Popover</span>(el, {
+  title:   <span class="vl">'Status Server'</span>,
+  content: <span class="vl">'Uptime 99.9% · Ping 12ms · Jakarta DC'</span>,
+  placement: <span class="vl">'top'</span>,
+  trigger: <span class="vl">'manual'</span>
+});
+
+serverPop.<span class="at">show</span>();    <span class="kw">// tampilkan</span>
+serverPop.<span class="at">hide</span>();    <span class="kw">// sembunyikan</span>
+serverPop.<span class="at">toggle</span>(); <span class="kw">// toggle</span>
+serverPop.<span class="at">dispose</span>(); <span class="kw">// hapus</span>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider"/>
+
+  <!-- ══════════════════════════════════════
+       SECTION 5 — HTML Content Popover
+  ══════════════════════════════════════════ -->
+  <section class="section">
+    <div class="section-label">Contoh 5</div>
+    <h2 class="section-title">Konten HTML di Dalam Popover</h2>
+    <p class="section-desc">Toolbar teks editor — popover menampilkan shortcut keyboard beserta deskripsi format.</p>
+
+    <div class="demo-card">
+      <p class="mb-3" style="font-size:13px;color:var(--muted);">Toolbar Rich Text Editor:</p>
+      <div class="toolbar mb-3">
+        <button class="icon-circle"
+          data-bs-toggle="popover"
+          data-bs-html="true"
+          data-bs-placement="bottom"
+          data-bs-title="<i class='bi bi-type-bold'></i> Bold"
+          data-bs-content="Cetak tebal teks yang dipilih.<br><small style='color:#888'>Shortcut: <kbd style='background:#222;color:#fff;padding:1px 5px;border-radius:3px;font-size:10px'>Ctrl + B</kbd></small>">
+          <i class="bi bi-type-bold"></i>
+        </button>
+        <button class="icon-circle"
+          data-bs-toggle="popover"
+          data-bs-html="true"
+          data-bs-placement="bottom"
+          data-bs-title="<i class='bi bi-type-italic'></i> Italic"
+          data-bs-content="Cetak miring teks yang dipilih.<br><small style='color:#888'>Shortcut: <kbd style='background:#222;color:#fff;padding:1px 5px;border-radius:3px;font-size:10px'>Ctrl + I</kbd></small>">
+          <i class="bi bi-type-italic"></i>
+        </button>
+        <button class="icon-circle"
+          data-bs-toggle="popover"
+          data-bs-html="true"
+          data-bs-placement="bottom"
+          data-bs-title="<i class='bi bi-type-underline'></i> Underline"
+          data-bs-content="Garis bawahi teks.<br><small style='color:#888'>Shortcut: <kbd style='background:#222;color:#fff;padding:1px 5px;border-radius:3px;font-size:10px'>Ctrl + U</kbd></small>">
+          <i class="bi bi-type-underline"></i>
+        </button>
+        <div class="toolbar-sep"></div>
+        <button class="icon-circle"
+          data-bs-toggle="popover"
+          data-bs-html="true"
+          data-bs-placement="bottom"
+          data-bs-title="<i class='bi bi-link-45deg'></i> Sisipkan Tautan"
+          data-bs-content="Tambahkan hyperlink ke teks.<br><small style='color:#888'>Shortcut: <kbd style='background:#222;color:#fff;padding:1px 5px;border-radius:3px;font-size:10px'>Ctrl + K</kbd></small>">
+          <i class="bi bi-link-45deg"></i>
+        </button>
+        <button class="icon-circle"
+          data-bs-toggle="popover"
+          data-bs-html="true"
+          data-bs-placement="bottom"
+          data-bs-title="<i class='bi bi-image'></i> Sisipkan Gambar"
+          data-bs-content="Upload gambar dari komputer atau tempel URL.<br><small style='color:#6ee7f7'>Maks ukuran: 5MB · JPG, PNG, WebP</small>">
+          <i class="bi bi-image"></i>
+        </button>
+        <div class="toolbar-sep"></div>
+        <button class="icon-circle"
+          data-bs-toggle="popover"
+          data-bs-html="true"
+          data-bs-placement="bottom"
+          data-bs-title="<i class='bi bi-code-slash'></i> Code Block"
+          data-bs-content="Sisipkan blok kode dengan syntax highlight.<br><small style='color:#888'>Shortcut: <kbd style='background:#222;color:#fff;padding:1px 5px;border-radius:3px;font-size:10px'>Ctrl + `</kbd></small>">
+          <i class="bi bi-code-slash"></i>
+        </button>
+      </div>
+
+      <div class="code-block">
+&lt;<span class="tg">button</span>
+  <span class="at">data-bs-toggle</span>=<span class="vl">"popover"</span>
+  <span class="at">data-bs-html</span>=<span class="vl">"true"</span>
+  <span class="at">data-bs-title</span>=<span class="vl">"&lt;i class='bi bi-type-bold'&gt;&lt;/i&gt; Bold"</span>
+  <span class="at">data-bs-content</span>=<span class="vl">"Cetak tebal.&lt;br&gt;&lt;kbd&gt;Ctrl+B&lt;/kbd&gt;"</span>&gt;
+  <span class="kw">B</span>
+&lt;/<span class="tg">button</span>&gt;
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider"/>
+
+  <!-- ══════════════════════════════════════
+       SECTION 6 — Events Popover
+  ══════════════════════════════════════════ -->
+  <section class="section">
+    <div class="section-label">Contoh 6</div>
+    <h2 class="section-title">Event Listener Popover</h2>
+    <p class="section-desc">Lacak interaksi pengguna di halaman onboarding — catat kapan popover dibuka & ditutup untuk analitik.</p>
+
+    <div class="demo-card">
+      <div class="d-flex flex-wrap gap-3 align-items-center mb-4">
+        <div class="d-flex align-items-center gap-3">
+          <div class="d-flex gap-2 align-items-center">
+            <span class="step-badge">1</span>
+            <button id="onboardBtn1"
+              class="btn btn-demo btn-cyan"
+              data-bs-toggle="popover"
+              data-bs-trigger="click"
+              data-bs-placement="right"
+              data-bs-title="🏠 Dashboard Anda"
+              data-bs-content="Di sini Anda dapat melihat ringkasan aktivitas, notifikasi, dan laporan harian.">
+              Dashboard
+            </button>
+          </div>
+          <div class="d-flex gap-2 align-items-center">
+            <span class="step-badge">2</span>
+            <button id="onboardBtn2"
+              class="btn btn-demo btn-pink"
+              data-bs-toggle="popover"
+              data-bs-trigger="click"
+              data-bs-placement="right"
+              data-bs-title="📊 Laporan & Statistik"
+              data-bs-content="Pantau performa bisnis Anda secara real-time dengan grafik interaktif.">
+              Laporan
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event log -->
+      <div class="event-log-wrapper">
+        <p class="event-log-label">
+          <i class="bi bi-terminal me-1"></i> Event Log
+        </p>
+        <div id="eventLog" class="event-log-output">
+          <span style="color:var(--muted)">// menunggu interaksi...</span>
+        </div>
+      </div>
+
+      <div class="code-block">
+<span class="kw">const</span> pop = <span class="kw">new</span> bootstrap.<span class="at">Popover</span>(el);
+
+el.<span class="at">addEventListener</span>(<span class="vl">'show.bs.popover'</span>, () =&gt; {
+  analytics.<span class="at">track</span>(<span class="vl">'popover_opened'</span>, { step: <span class="vl">1</span> });
+});
+el.<span class="at">addEventListener</span>(<span class="vl">'hide.bs.popover'</span>, () =&gt; {
+  analytics.<span class="at">track</span>(<span class="vl">'popover_closed'</span>);
+});
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider"/>
+
+  <!-- ══════════════════════════════════════
+       SECTION 7 — Referensi Opsi
+  ══════════════════════════════════════════ -->
+  <section class="section">
+    <div class="section-label">Referensi</div>
+    <h2 class="section-title">Opsi Bootstrap Popover</h2>
+    <p class="section-desc">Tabel ringkas opsi paling umum digunakan dalam proyek nyata.</p>
+
+    <div class="demo-card" style="padding:0;overflow:hidden;">
+      <table class="ref-table">
+        <thead>
+          <tr>
+            <th>Opsi</th>
+            <th>Tipe</th>
+            <th>Default</th>
+            <th>Keterangan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="mono">placement</span></td>
+            <td class="text-accent3">string</td>
+            <td class="text-muted-custom">top</td>
+            <td>Posisi: top / bottom / left / right / auto</td>
+          </tr>
+          <tr>
+            <td><span class="mono">trigger</span></td>
+            <td class="text-accent3">string</td>
+            <td class="text-muted-custom">click</td>
+            <td>click · hover · focus · manual</td>
+          </tr>
+          <tr>
+            <td><span class="mono">html</span></td>
+            <td class="text-accent3">boolean</td>
+            <td class="text-muted-custom">false</td>
+            <td>Izinkan tag HTML dalam konten</td>
+          </tr>
+          <tr>
+            <td><span class="mono">delay</span></td>
+            <td class="text-accent3">number</td>
+            <td class="text-muted-custom">0</td>
+            <td>Jeda (ms) sebelum tampil/hilang</td>
+          </tr>
+          <tr>
+            <td><span class="mono">container</span></td>
+            <td class="text-accent3">string</td>
+            <td class="text-muted-custom">false</td>
+            <td>Selector elemen induk popover</td>
+          </tr>
+          <tr>
+            <td><span class="mono">animation</span></td>
+            <td class="text-accent3">boolean</td>
+            <td class="text-muted-custom">true</td>
+            <td>Animasi fade saat tampil/hilang</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="site-footer">
+    <p>Dibuat dengan <span>♥</span> · Bootstrap 5 Popover · Tugas Pertemuan 3</p>
+  </footer>
+
+</div>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // ── Inisialisasi semua popover via data attributes ──
+  const popoverEls = document.querySelectorAll('[data-bs-toggle="popover"]');
+  popoverEls.forEach(el => new bootstrap.Popover(el));
+
+  // ── Popover manual untuk demo JS (Section 4) ──
+  const serverEl = document.getElementById('serverPopoverTarget');
+  const serverPop = new bootstrap.Popover(serverEl, {
+    title:     '🟢 Status Server',
+    content:   'Uptime: 99.9% &nbsp;·&nbsp; Ping: 12ms &nbsp;·&nbsp; Region: Jakarta DC',
+    placement: 'top',
+    trigger:   'manual',
+    html:      true
+  });
+
+  // ── Event Listener demo (Section 6) ──
+  const log = document.getElementById('eventLog');
+  function addLog(msg, color = '#6ee7f7') {
+    const t = new Date().toLocaleTimeString('id-ID');
+    log.innerHTML += `<div style="color:${color}">[${t}] ${msg}</div>`;
+    log.scrollTop = log.scrollHeight;
+  }
+
+  const eventBtns = [
+    { id: 'onboardBtn1', label: 'Dashboard (Langkah 1)' },
+    { id: 'onboardBtn2', label: 'Laporan (Langkah 2)' }
+  ];
+
+  eventBtns.forEach(({ id, label }) => {
+    const el = document.getElementById(id);
+    el.addEventListener('show.bs.popover',     () => addLog(`▶ show.bs.popover — ${label}`, '#6ee7f7'));
+    el.addEventListener('shown.bs.popover',    () => addLog(`✔ shown.bs.popover — ${label}`, '#4ade80'));
+    el.addEventListener('hide.bs.popover',     () => addLog(`▶ hide.bs.popover — ${label}`, '#f97df2'));
+    el.addEventListener('hidden.bs.popover',   () => addLog(`✔ hidden.bs.popover — ${label}`, '#ffd166'));
+    el.addEventListener('inserted.bs.popover', () => addLog(`✚ inserted.bs.popover — ${label}`, '#a78bfa'));
+  });
+</script>
+
+</body>
+</html>
